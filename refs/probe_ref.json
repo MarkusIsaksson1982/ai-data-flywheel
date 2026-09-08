@@ -1,0 +1,12 @@
+{
+ "ref": [
+  0.486,
+  0.458,
+  0.556,
+  0.736,
+  0.764,
+  0.875
+ ],
+ "source": "pkg4_comp.json healthy controls pooled",
+ "note": "tracked; regenerating requires the full pkg4 run"
+}

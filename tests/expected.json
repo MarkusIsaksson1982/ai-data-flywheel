@@ -1,0 +1,104 @@
+{
+ "bank_head": {
+  "answer": 25,
+  "pid": "D0-00",
+  "steps": [
+   "9 + 16 = 25"
+  ],
+  "text": "Compute 9 + 16.",
+  "tier": 0
+ },
+ "fixed_P07": {
+  "correct": true,
+  "format_ok": true,
+  "rationale": "correct final; step-consistency 0.00; format ok.",
+  "rule_score": 80.0,
+  "scorer": "fixed",
+  "step_consistency": 0.0
+ },
+ "golden_calib": [
+  1.054,
+  -7.224
+ ],
+ "golden_rule": [
+  85.0,
+  5.0,
+  100.0,
+  15.0,
+  22.5,
+  92.5,
+  15.0,
+  92.5,
+  22.5,
+  92.5,
+  30.0,
+  12.5,
+  22.5,
+  100.0,
+  22.5,
+  30.0,
+  12.5,
+  92.5,
+  82.5,
+  92.5,
+  92.5,
+  100.0,
+  22.5,
+  100.0
+ ],
+ "legacy_P07": {
+  "correct": true,
+  "format_ok": true,
+  "rationale": "correct final; step-consistency 0.00; format ok.",
+  "rule_score": 85.0,
+  "step_consistency": 0.0
+ },
+ "mini": {
+  "kept0": 13,
+  "r0": {
+   "avg_answer_spread_per_problem": 2.583,
+   "avg_final": 44.93,
+   "avg_rule": 44.93,
+   "correct_rate": 0.361,
+   "n": 36,
+   "pattern_diversity": 0.796,
+   "self_similarity": 0.168,
+   "stdev": 35.4
+  },
+  "r1": {
+   "avg_answer_spread_per_problem": 2.083,
+   "avg_final": 62.99,
+   "avg_rule": 62.99,
+   "correct_rate": 0.583,
+   "n": 36,
+   "pattern_diversity": 0.768,
+   "self_similarity": 0.146,
+   "stdev": 36.59
+  },
+  "sm1_params": {
+   "arithmetic_acc": 0.753,
+   "compound_growth": 0.0,
+   "diversity": 0.6,
+   "format_rel": 0.738,
+   "misc_rate": 0.0,
+   "reason_depth": 1.493,
+   "self_critique": 0.494,
+   "temperature": 0.85,
+   "tier_acc": [
+    0.55,
+    0.55,
+    0.55
+   ],
+   "trap_rate": 0.0
+  }
+ },
+ "probe_head": {
+  "answer": 25,
+  "pid": "Q0-00",
+  "steps": [
+   "18 + 7 = 25"
+  ],
+  "text": "Compute 18 + 7.",
+  "tier": 0
+ }
+}

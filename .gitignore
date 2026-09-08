@@ -1,0 +1,17 @@
+# ---- generated data (deterministically reproducible; never commit) ----
+*.json
+!refs/*.json
+!tests/expected.json
+
+# ---- logs ----
+*_console.txt
+terminal_output.txt
+round_summaries.txt
+
+# ---- python ----
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
