@@ -1,0 +1,5 @@
+{"census":"full-corpus retro-ledger NDS (capability_ledger, Wilson vs Wilson+BH-FDR)",
+"commit":"see git log (locked post-measurement)",
+"corpora":{"harness_shared_skill":{"runs":15,"nds_mean":{"default":0.0,"fdr_0.05":0.0},"verdict":"harvesting empty; dashboard only"},"pkg4_collapse":{"runs":12,"nds_mean":{"default":0.25,"fdr_0.05":0.25},"verdict":"partial drift"},"tier_forgetting_pkg10_18":{"runs":96,"nds_mean":{"default":0.413,"fdr_0.05":0.413},"understating_runs":21,"dormant_slices":58,"importable_trailing":48,"verdict":"material; harvesting supported"},"nemotron_independent_rerun":{"runs":21,"nds_mean":0.81,"note":"their data (checksums differ); same direction, larger magnitude; not pooled"}},
+"fdr_finding":"BH-FDR ported (Nemotron session) changes zero cells on current data: Wilson pre-gating already admits only p<<threshold flips. Conservative by construction; armed for noisier regimes.",
+"regenerate":"python retro_ledger.py --logs . --pattern 'pkg1*.json' --out <tmp> [--fdr 0.05]; harness_results.json and pkg4_comp.json separately"}

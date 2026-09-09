@@ -116,6 +116,20 @@ premise — documented in `pkg17_report.md`); several scripts append console log
   (expert/clean help modestly; coordinated poison floors; local-CPU degradation
   is a separate recipe/hardware regime).
 
+## Capability ledger (multi-model contribution, consolidated)
+
+- `capability_ledger.py` + `retro_ledger.py` + `demo_make_logs.py` — adopted
+  canonical implementation (sibling Muse-Spark session): per-slice C/M
+  matrices, Wilson-gated frontiers, NDS, dormant census, harvest paths.
+- `pkg19_ledger_report.md` — design (Ling session) completed with measured
+  numbers on this repo: NDS 0.0 (healthy shared-skill) / 0.25 (collapse) /
+  0.413 (forgetting regimes); independent Nemotron rerun reports 0.81.
+- `refs/ledger_census.json` — pinned full-corpus numbers above, Wilson-only
+  and BH-FDR gated (identical: FDR changes zero cells on current data).
+- `tests/test_ledger.py` — adopted suite (green); Big Pickle's variant test
+  targets an unsupplied API and was excluded with documented reason.
+- Run: `python demo_make_logs.py && python retro_ledger.py --logs ./demo_logs --out <tmpdir> --mode tier`.
+
 ## License
 
 MIT — see `LICENSE`. Optional next step: CI workflow running `pytest` with `PYTHONHASHSEED=0`.
