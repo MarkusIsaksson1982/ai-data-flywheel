@@ -1,0 +1,10 @@
+Noisy-judge correction complete — containment is now a real test result, not algebra. (pilot-noisy_*.json, appended to pilot_report.md.)
+{
+  "arm": "gated_noisy (invert + N(0,20) + adaptive alpha)",
+  "alpha_trajectory": "0.8 every round, all seeds (agreement approx -1 throughout)",
+  "kept_correct_by_seed": {"0": 0.917, "1500": 0.833, "3000": 0.806},
+  "vs": {"control": "identical", "invert_deterministic": 0.0},
+  "non_vacuity": "kept-problem overlap with control 9-12/12 per round — noise genuinely reorders, correctness fully preserved",
+  "bonus": "ollama options.seed reproduces generations bit-identically across arms, so arm differences isolate selection"
+}
+Updated transfer table: gating containment now holds against both a deterministic adversary (by identity) and a noisy one (by estimation) — the vacuity objection is closed. Remaining open item per the standing plan is the SFT/LoRA loop for the pool-mass question; everything else on the pilot is green.

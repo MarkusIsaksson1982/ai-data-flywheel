@@ -1,0 +1,9 @@
+# SFT / gradient-harness stack (separate from stdlib-first requirements.txt).
+# Used in the dedicated .venv-sft environment (see lm reports) and on Colab T4.
+# torch CPU wheel comes from the PyTorch index:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu
+transformers==5.16.1
+peft==0.20.0
+accelerate==1.14.0
+numpy<2

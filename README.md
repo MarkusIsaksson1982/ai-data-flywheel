@@ -102,6 +102,20 @@ premise — documented in `pkg17_report.md`); several scripts append console log
   observed between turns from a base-file micro-edit; fork-validity was
   unaffected. Fingerprint G0-kept signatures on any future occurrence.
 
+## Live-model tracks (Ollama pilot + GPU SFT)
+
+- `flywheel_pilot.py` — qwen2.5:1.5b generation wired into the scored-artifact
+  loop (control / invert / gated / gated_noisy arms); `pilot_report.md`.
+- `tools/sft_loop.py` — LoRA SFT diets (clean / poisoned / expert) + probe eval;
+  needs `requirements-sft.txt` (dedicated venv recommended, see SFT notes).
+- `tools/colab_expert_cell.py` — the same expert-diet cell as run on Colab T4
+  (single self-contained cell); `tools/emit_colab_cell.py` regenerates it from
+  `tools/W_bank.json` + `tools/Z_probe.json` (procedural banks, git-ignored,
+  rebuildable via `flywheel_pkg9`).
+- GPU SFT results: `lm_bias_report.md` + `refs/colab_gpu_results.json`
+  (expert/clean help modestly; coordinated poison floors; local-CPU degradation
+  is a separate recipe/hardware regime).
+
 ## License
 
 MIT — see `LICENSE`. Optional next step: CI workflow running `pytest` with `PYTHONHASHSEED=0`.
