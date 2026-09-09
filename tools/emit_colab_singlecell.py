@@ -15,7 +15,7 @@ TEMPLATE = '''# SINGLE-CELL cross-family SFT (Colab GPU): {label}
 # Paste this whole file into ONE Colab cell and run. Paste ALL cell output back.
 import subprocess, sys
 subprocess.run([sys.executable, "-m", "pip", "install", "-q",
-                "transformers", "peft", "accelerate"], check=True)
+                "transformers", "peft", "accelerate", "torchao>=0.16.0"], check=True)
 print("PIP DONE", flush=True)
 
 import json, random, re, time
