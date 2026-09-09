@@ -6,6 +6,7 @@
 # ---- logs ----
 *_console.txt
 terminal_output.txt
+terminal-output*
 round_summaries.txt
 
 # ---- python ----
