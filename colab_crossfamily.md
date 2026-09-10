@@ -1,5 +1,11 @@
 # Colab cross-family SFT: expert diet gains on SmolLM2 + TinyLlama (Qwen dissociates)
 
+> Retroactive methodology caveat (round7, binding): every number below is a
+> SINGLE-ENDPOINT read (one eval at run end, no mid-trajectory). CONSULT-2's chained
+> evals show single-point reads swing ±3/30 by stopping point — these numbers stand
+> as measured, but any cross-run comparison at 3ep-only precision is suspect.
+> Chained evals are default methodology henceforth.
+
 ## Runs (single-cell GPU, T4, recipe parity except noted)
 - `tools/colab_singlecell_smollm2.py` (HuggingFaceTB/SmolLM2-1.7B-Instruct):
   pre **12/30** → post **16/30** (+4), fixed loss 1.180 → 0.374, 27 steps / 8 s. CELL DONE.

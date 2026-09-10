@@ -57,6 +57,20 @@ results change what the next item should be. Conditions below are binding, not a
   P3 real-weights plateau = brief + results. NEXT: P3 push → external round with the
   transfer-gap question (why doesn't hard mass create skill: pre-training gap vs
   dose-formulation?).
+- Round7 audit (binding): (a) SCOPE RULE — sim is a validated substrate for information
+  routing/pool composition, NOT for skill acquisition; any future "sim predicts
+  acquisition" claim must carry CONSULT-2 as counterexample (qwen). Tier_acc has no
+  real-model analogue; sim rule = maintenance-against-forgetting, never creation;
+  sim hard-mass lived in mixed pools, never hard-only. (b) Chained evals DEFAULT
+  methodology; prior GPU numbers explicitly marked single-endpoint
+  (`colab_crossfamily.md` header). (c) Format is the moving metric at small N; fmt
+  entanglement recorded as second sim boundary. (d) No directional harm claims at
+  n=30 noise (except s3000 fmt collapse). (e) Queued discriminators: full-finetune /
+  larger-rank vs same 36 traces (adapter-capacity test); minimal-scaffold rescue of
+  floor-model fmt collapse. (f) Public-claim ceiling: preservation/routing/recovery
+  demonstrated; autonomous capability escalation NOT demonstrated; consult_report's
+  refusal to smuggle retrieval is the load-bearing precedent (luna). PhaseCAL parked
+  (5th round, no trigger).
   Forwarding posture (binding): FAIL primary, R0 secondary — any CONSULT-0
   forwarding leads with gate-FAIL, never R0-first.
 - P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked
