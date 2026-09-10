@@ -49,6 +49,14 @@ results change what the next item should be. Conditions below are binding, not a
   seeds [0,1500,3000] × {mixed anchor, hard bundled} × 3ep→5ep chained).
   Bank constraint: length≡tier, so length-isolation out of scope (queued: short-hard /
   long-easy bank extension). pkg30 corrected: second ~0.85 sample, not low-skill test.
+- Round6b CONSULT-2 RESULTS (`consult2_results.md`): NULL confirmed — t2 = 0/10 both
+  arms, all families/seeds/epochs. 36 hard traces × 5ep cannot create t2 skill from
+  zero: sim ≤2-arts rule does NOT transfer (foreground divergence). Secondaries:
+  non-monotonic epoch trajectories (chained evals justified); hard-only diet starves
+  floor models (TinyLlama fmt collapse); Qwen format/accuracy dissociation.
+  P3 real-weights plateau = brief + results. NEXT: P3 push → external round with the
+  transfer-gap question (why doesn't hard mass create skill: pre-training gap vs
+  dose-formulation?).
   Forwarding posture (binding): FAIL primary, R0 secondary — any CONSULT-0
   forwarding leads with gate-FAIL, never R0-first.
 - P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked
