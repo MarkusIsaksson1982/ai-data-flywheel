@@ -18,3 +18,12 @@ FIT otherwise (pure single, pruned fallback, legitimate gain>gate merges).
 Route away from UNFIT lineages ex ante (prefer FIT; pick best among FIT). s3000-type
 washouts are the known price: insurance costs −0.125 there, pays +0.146/+0.062
 elsewhere. Router rule ships as stated; revisit only if a regime shows negative EV.
+
+## Status note (round4 audit — binding on router integration)
+The gate is a RISK PRIOR, not a detector: it flags fork statistics (veto + history),
+not mechanism presence, and cannot by itself detect washout regimes (s3000's fork
+statistics matched s0/s1500 while contamination never materialized). Its EV is
+regime-dependent by construction. Router integration MUST NOT ride the pooled mean:
+carry per-seed EV (+0.104/+0.104/−0.070) into the router doc, keep integration QUEUED
+behind WQ2b (measured-pollution flag + taint-decay calibration), and state the
+prior-not-detector status wherever the flag is consumed.

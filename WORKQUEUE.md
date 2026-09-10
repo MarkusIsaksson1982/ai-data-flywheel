@@ -25,8 +25,24 @@ results change what the next item should be. Conditions below are binding, not a
 - WQ5-sim DONE (`flywheel_pkg29.py`, `pkg29_dose.json`, `pkg29_dose.md`): mass→skill
   (threshold ≤2 arts), length→depth, probe ≈ skill^depth compounding. SFT motive
   narrowed to long-chain dose (CONSULT-2 when raised).
+- Round4 audit amendments (binding, applied to pushed text): R0 reframed as
+  pool-channel refinement (NOT anti-consult pushback); eco>consult labeled
+  directional (Wilson-overlapping); headline triple (no emergence [status: not
+  demonstrated] / no on-slice superiority [144-vs-12 caveat] / joint-coverage
+  benefit); critique-channel marked UNTESTED (esc=0); graft≈eco explained via skill
+  saturation; adversarial checklist in `pkg28_eco.md`; router doc carries
+  prior-not-detector + per-seed EV.
+- Queued follow-ups (non-blocking, in order): (i) skill-margin run — low-skill
+  generator + length-matched pools (identifies the compounding interaction; until
+  then skill^depth is a depth-margin finding); (ii) per-slice-budget-matched
+  ecosystem comparison (report BOTH matchings; total-cost vs per-slice answer
+  different questions); (iii) CONSULT-2 long-chain SFT brief must state the transfer
+  theory (why long-trace SFT raises hard probe where short-trace doesn't — sim
+  heuristic alone cannot license it) + vary length at matched correctness/mass.
 - P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked
-  (trigger: unattributable divergence in WQ4-result readings).
+  (trigger, strengthened round4: external readers disagree about what WQ4 DEMONSTRATES
+  in a way untraceable to ordinary interpretation differences — not mere importance
+  disagreements; if ever run: read-only, interpretation lock, A/B/C classes).
 
 ## Round2 amendments (2026-09-10, 7 analyses; binding)
 CONSULT-0 and CONSULT-1 both returned. Nods with amendments — incorporated below.
