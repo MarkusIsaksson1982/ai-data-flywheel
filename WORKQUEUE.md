@@ -206,3 +206,12 @@ reachable threshold AND prompter approves Colab time (CONSULT-2).
 - CONSULT-2: before any SFT long-dose — Colab time/dose approval.
 - Plus: any CONDITION-B/P0 incident, and any proposal to spend Colab/GPU time, is raised
   immediately regardless of plateau position.
+
+## Colab governance (prompter standing order, round7b)
+Broad pre-approval for Colab GPU runs is GRANTED — no per-run approval rounds. Protocol:
+quick-check candidate runs alongside broader forwarding sessions (is the run meaningful
+given current evidence?); when yes, designate RECOMMENDED in TUI (not "waiting for
+approval") with full single cells, built and pushed before designation. Split cells
+when later steps depend on earlier results; combine independent steps maximally within
+memory limits (T4 16GB: one model at a time, sequential reloads proven). Length-isolation
+SFT stays demoted behind bank extension (dependency, not approval).

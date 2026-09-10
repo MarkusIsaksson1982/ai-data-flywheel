@@ -18,7 +18,8 @@ traces × 5ep) cannot create t2 skill from a 0/10 base. Scope discipline (round7
   hard-only). Expecting transfer was the error, not the null.
 - The axis, not the amount, fails: tier_acc has no real-model analogue; capability on
   hard probes comes from pretraining, not SFT dose. 36 hard traces can't create the
-  pattern — and neither, on this reading, could 100 or 300 of the same axis.
+  pattern. Whether 100 or 300 of the same axis would also fail is HYPOTHESIS, not
+  finding — stated as such (round7b).
 - Floor-effect honesty: at n=10, "0 stays 0" means NO BIG JUMP, not "no effect"
   (1–2 newly-correct items would barely register). A harder base (t2 2–4/10) or n≥30
   probe would be needed to strengthen this null. It stands as a bound, not a zero.
