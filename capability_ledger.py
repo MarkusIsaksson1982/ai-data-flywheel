@@ -514,8 +514,14 @@ def aggregate_understatement(rounds: list, frontier: list) -> dict:
 # ---------------------------------------------------------------------------
 
 def build_ledger(rounds: list, run_id: str = "run",
-                 mode: str = "tier", dose_cap: float = 0.25, fdr=None) -> dict:
-    """Assemble a full capfront-ledger/v1 document for one run (combo/arm)."""
+                  mode: str = "tier", dose_cap: float = 0.25, fdr=None,
+                  stack: dict | None = None) -> dict:
+    """Assemble a full capfront-ledger/v1 document for one run (combo/arm).
+
+    stack: optional execution provenance, e.g. {"device": "cuda:0", "dtype": "float16",
+    "dose_epochs": 5}. Absent stack is stamped stack_assumed (same discipline as
+    n_assumed): unknown, not default-cpu. WQ6.
+    """
     C = build_C(rounds, mode)
     M = build_M(rounds, mode)
     frontier = build_frontier(C, fdr=fdr)
@@ -542,10 +548,12 @@ def build_ledger(rounds: list, run_id: str = "run",
             "C": C, "M": M, "frontier": enriched,
             "nds": nds, "understatement": under,
             "provenance": {"c_source_priority": ["probe_tier_corr", "train-recompute", "tier_acc-param"],
-                           "m_source": "kept_ids x artifacts (minus _misc quarantine)",
+                            "m_source": "kept_ids x artifacts (minus _misc quarantine)",
+                            "stack": dict(stack) if stack else {"device": "unknown", "dtype": "unknown",
+                                                                "stack_assumed": True},
                             "gating": ("wilson-nonoverlap-95pct" if fdr is None
-                                       else f"wilson-nonoverlap-95pct+fdr-{fdr}"),
-                           "epistemic": "V-only by default"}}
+                                        else f"wilson-nonoverlap-95pct+fdr-{fdr}"),
+                            "epistemic": "V-only by default"}}
 
 
 def ledger_to_jsonable(doc: dict) -> dict:
