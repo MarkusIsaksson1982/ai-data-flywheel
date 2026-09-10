@@ -25,9 +25,23 @@ CONFOUNDED three ways — no family claim is licensed yet:
   device/dtype (Qwen fp32 CPU vs fp16 T4). Next: Qwen GPU cell at 3 epochs (same loop)
   to close   device/dtype; then seeds 1500/3000 for the new models.
 
+## Qwen on GPU: evaporation does NOT reproduce — artifact retired
+- Qwen GPU 3ep (`tools/colab_singlecell_qwen.py`): pre **14/30** → post **15/30** (+1),
+  loss 1.400 → 0.428. Holds.
+- Qwen GPU 5ep: pre **14/30** → post **19/30** (+5), loss → 0.069. Best result yet.
+- Qwen CPU fp32 5ep (old local ref): 15→9, 15→7, 14→13. The collapse is specific to
+  the old CPU/fp32 stack — not family, not dose, not baseline. The SFT-track
+  "evaporation" finding is RETIRED as a diet/family property (kept as: LoRA-SFT on
+  CPU-fp32 with this recipe can destroy where GPU-fp16 builds — stack-sensitivity note).
+- Cross-family confirmation ACHIEVED: all three families gain on GPU at both doses,
+  monotonically with dose (3ep → 5ep: Qwen +1→+5, SmolLM2 +4→+5, TinyLlama +7→+11).
+
 ## Next rung (dose closed; baseline + device remain)
 - (a) DONE — dose eliminated (this section above).
-- (b) Seeds 1500/3000 at 3 epochs (pool variation; Qwen has 3 seeds). Edit SEED constant.
+- (b) Batched seeds 1500+3000 + per-tier/format instrumentation, ONE run per model at
+  EPOCHS=5 (all models gain more at 5; model reloaded fresh per seed, no adapter
+  compounding): `tools/colab_batch_{qwen,smollm2,tinyllama}.py`. Splits TinyLlama
+  format-learning from reasoning gain (probe is 10/10/10 per tier).
 - (c) Qwen GPU single-cell at 3 epochs (dose+device match from the Qwen side) — cell
   `tools/colab_singlecell_qwen.py` emitted alongside the others.
 - Instrumentation gap: cells return aggregates only — per-tier/format-vs-arithmetic split
