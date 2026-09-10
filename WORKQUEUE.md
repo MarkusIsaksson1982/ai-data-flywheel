@@ -45,7 +45,10 @@ results change what the next item should be. Conditions below are binding, not a
   sequencing skill-first-then-depth. (ii) DONE (`--per-slice`, `pkg28b_perslice.md`) —
   eco ties solo-frontier exactly, holds all slices; purity premium replicates outside
   the budget confound; report BOTH matchings henceforth. (iii) CONSULT-2 brief
-  RAISABLE now (prompter call — Colab/GPU time approval still required).
+  RAISED round6 (GPU approved; `consult2_brief.md` + `tools/colab_harddose_*.py`:
+  seeds [0,1500,3000] × {mixed anchor, hard bundled} × 3ep→5ep chained).
+  Bank constraint: length≡tier, so length-isolation out of scope (queued: short-hard /
+  long-easy bank extension). pkg30 corrected: second ~0.85 sample, not low-skill test.
   Forwarding posture (binding): FAIL primary, R0 secondary — any CONSULT-0
   forwarding leads with gate-FAIL, never R0-first.
 - P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked

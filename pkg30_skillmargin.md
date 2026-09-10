@@ -1,6 +1,10 @@
 # Package 30 — Skill-margin run: interaction confirmed (depth binds at saturated skill)
 
-## Design (round5-i)
+## Design (round5-i) + correction (round6)
+Base [0.80, 0.90, 0.45] was INTENDED as low-skill; terminal 0.834 ≈ pkg29's 0.864 —
+this is a second sample at ~0.85, NOT a low-skill test (deepseek correction, accepted).
+The interaction is observed between two saturation clusters (~0.85 vs pkg28's ~0.99),
+intermediate range untested. Result stands as stated below with that scope.
 pkg29 clone, base tier_acc [0.80, 0.90, 0.45] (LOW t2 skill), SAME banks (imported —
 directly comparable), arms H0 / H12-mixed / H12-short / H12-long × 3 seeds × 3 rounds.
 `python flywheel_pkg30.py` → `pkg30_skillmargin.json`.
