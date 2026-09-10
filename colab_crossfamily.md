@@ -36,16 +36,25 @@ CONFOUNDED three ways — no family claim is licensed yet:
 - Cross-family confirmation ACHIEVED: all three families gain on GPU at both doses,
   monotonically with dose (3ep → 5ep: Qwen +1→+5, SmolLM2 +4→+5, TinyLlama +7→+11).
 
-## Next rung (dose closed; baseline + device remain)
-- (a) DONE — dose eliminated (this section above).
-- (b) Batched seeds 1500+3000 + per-tier/format instrumentation, ONE run per model at
-  EPOCHS=5 (all models gain more at 5; model reloaded fresh per seed, no adapter
-  compounding): `tools/colab_batch_{qwen,smollm2,tinyllama}.py`. Splits TinyLlama
-  format-learning from reasoning gain (probe is 10/10/10 per tier).
-- (c) Qwen GPU single-cell at 3 epochs (dose+device match from the Qwen side) — cell
-  `tools/colab_singlecell_qwen.py` emitted alongside the others.
-- Instrumentation gap: cells return aggregates only — per-tier/format-vs-arithmetic split
-  needed to separate format-learning (TinyLlama floor) from reasoning gain. Queued.
+## Batched seeds 1500/3000 @5ep + instrumentation: gains everywhere, hard immobile
+- Qwen: s1500 **14→20** (t1 5/10→10/10, fmt 30→25), s3000 **14→17** (t1 5→8, fmt 30→23).
+- SmolLM2: s1500/s3000 both **12→16** (t1 3→6, fmt 16→21/22). Bit-near-identical seeds.
+- TinyLlama: s1500 **1→8**, s3000 **1→7**, gains ~all t0 (1→7/6), fmt 2→23/19.
+- **t2 (hard) = 0/10 pre AND post in all 6 runs** (and all prior runs): 36-trace expert SFT
+  moves easy/med only. Short-SFT boundary; hard needs sustained supply (sim: pkg23).
+
+## Format-vs-reasoning split (accuracy conditional on parseable Final)
+- Qwen: precision 47%→80% (s1500), t1 5→10 — genuine reasoning gain; fmt slips 30→25/23.
+- SmolLM2: precision 75%→76% flat, fmt 16→21 — format expansion, precision preserved.
+- TinyLlama: precision 50%→35% (s1500) — gain is ~pure format learning, reasoning ~nil.
+- 12 GPU runs total (3 models × seeds×doses): 11 positive, 1 hold (+1), 0 drops.
+
+## Leftovers (SFT track closed; queued, unrun)
+- (a/b/c) DONE — dose, seeds, Qwen-GPU all closed above.
+- Instrumentation gap CLOSED by the batch cells (per-tier + fmt in every eval).
+- Open curiosities, not rungs: Qwen fmt slip 30→25/23 post-SFT (style drift?); hard-tier
+  immobility under short SFT (dose×duration frontier unmapped — needs a longer-dose
+  design, not more 36-trace runs).
 
 ## Loop status
 Feedback loop confirmed: paste-output → diagnose → push fix → re-run, two cycles
