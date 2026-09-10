@@ -53,6 +53,12 @@ SEEDS = [0, 1500, 3000]
 NPP = 3
 N_TOTAL = 144
 SPLITS = {"cheap": 102, "mid": 30, "frontier": 12}
+# --per-slice: DIAGNOSTIC matching (round5-ii). Every stream gets N_TOTAL calls
+# (eco total 432 vs solo 144): isolates per-slice capability from budget shape.
+# Default (total-cost) matching is the external-facing frame; per-slice answers
+# whether "specialist wins on-slice" survives equal exposure. Output switches to
+# pkg28b_perslice.json. Phase-1 specialization identical in both modes.
+PER_SLICEMATCH = "--per-slice" in sys.argv
 DIETS = {"cheap": {0, 1}, "mid": {1}, "frontier": {2}}
 TIERACC = {"cheap": [0.90, 0.60, 0.35], "mid": [0.70, 0.90, 0.50],
            "frontier": [0.95, 0.90, 0.75]}
@@ -163,6 +169,8 @@ def escalate(arts, frontier_sm, seed):
 
 def scale_split(members):
     """Split N_TOTAL across member tiers proportional to SPLITS weights."""
+    if PER_SLICEMATCH:
+        return {t: N_TOTAL for t in members}
     w = {t: SPLITS[t] for t in members}
     tot = sum(w.values())
     out, acc = {}, 0
@@ -253,7 +261,8 @@ def run_seed(seed):
         for g in range(3, 7):
             if arm in ("consult", "graft"):
                 members_g, split = ("cheap", "mid", "frontier"), \
-                    {"cheap": 102, "mid": 30, "frontier": 12}
+                    ({"cheap": 102, "mid": 30, "frontier": 12} if not PER_SLICEMATCH
+                     else {"cheap": 144, "mid": 144, "frontier": 144})
                 sms_g = {"cheap": st["cheap"]["sm"], "mid": st["mid"]["sm"],
                          "frontier": sms["frontier"]}
             elif arm.startswith("solo-"):
@@ -380,9 +389,11 @@ def main():
     all_out = []
     for seed in SEEDS:
         all_out.extend(run_seed(seed)["combos"])
-    with open(OUT / "pkg28_eco.json", "w") as f:
-        json.dump({"block": "eco", "stage1a": s1, "combos": all_out}, f, indent=1)
-    print("Wrote pkg28_eco.json")
+    with open(OUT / ("pkg28b_perslice.json" if PER_SLICEMATCH else "pkg28_eco.json"), "w") as f:
+        json.dump({"block": "eco-perslice" if PER_SLICEMATCH else "eco",
+                   "per_slicematch": PER_SLICEMATCH,
+                   "stage1a": s1, "combos": all_out}, f, indent=1)
+    print("Wrote", "pkg28b_perslice.json" if PER_SLICEMATCH else "pkg28_eco.json")
 
 
 if __name__ == "__main__":

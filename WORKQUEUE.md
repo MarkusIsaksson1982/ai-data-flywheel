@@ -32,13 +32,22 @@ results change what the next item should be. Conditions below are binding, not a
   benefit); critique-channel marked UNTESTED (esc=0); graft≈eco explained via skill
   saturation; adversarial checklist in `pkg28_eco.md`; router doc carries
   prior-not-detector + per-seed EV.
-- Queued follow-ups (non-blocking, in order): (i) skill-margin run — low-skill
-  generator + length-matched pools (identifies the compounding interaction; until
-  then skill^depth is a depth-margin finding); (ii) per-slice-budget-matched
-  ecosystem comparison (report BOTH matchings; total-cost vs per-slice answer
-  different questions); (iii) CONSULT-2 long-chain SFT brief must state the transfer
-  theory (why long-trace SFT raises hard probe where short-trace doesn't — sim
-  heuristic alone cannot license it) + vary length at matched correctness/mass.
+- Queued follow-ups (round5 decision: FIRE (ii) first + (i) alongside; HOLD (iii);
+  PhaseCAL parked unanimously): (i) skill-margin run — low-skill generator +
+  length-matched pools (identifies compounding interaction; pkg30); (ii)
+  per-slice-budget-matched ecosystem comparison — DESIGN FIRST (total-cost vs
+  per-slice answer different questions; total-cost frame is the external-facing one,
+  per-slice the diagnostic; pkg28b flag); (iii) CONSULT-2 brief HELD until (i)/(ii)
+  land — required questions pre-listed (transfer theory: why long-trace SFT raises
+  hard probe where short-trace doesn't; length-at-matched-mass design; GPU budget).
+  Round5 outcome: (i) DONE (`flywheel_pkg30.py`, `pkg30_skillmargin.md`) — depth-margin
+  NULL at low skill too; interaction by contrast (depth binds only at saturated skill);
+  sequencing skill-first-then-depth. (ii) DONE (`--per-slice`, `pkg28b_perslice.md`) —
+  eco ties solo-frontier exactly, holds all slices; purity premium replicates outside
+  the budget confound; report BOTH matchings henceforth. (iii) CONSULT-2 brief
+  RAISABLE now (prompter call — Colab/GPU time approval still required).
+  Forwarding posture (binding): FAIL primary, R0 secondary — any CONSULT-0
+  forwarding leads with gate-FAIL, never R0-first.
 - P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked
   (trigger, strengthened round4: external readers disagree about what WQ4 DEMONSTRATES
   in a way untraceable to ordinary interpretation differences — not mere importance
