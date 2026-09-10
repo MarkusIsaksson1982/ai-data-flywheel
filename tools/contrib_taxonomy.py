@@ -42,6 +42,16 @@ def classify(p, c, p2=None):
     return "drift"
 
 
+def recombine2_boundary(p, c):
+    """Floorless recombine (claude/WQ1b): fires iff p < HIGH, p2 < HIGH, and
+    c >= max(p,p2)+DELTA, i.e. p2 <= c-DELTA (and p2 < HIGH).
+    Returns the p2 upper bound for firing; 'N/A' if it cannot fire for any p2
+    (c < p+DELTA, or p itself >= HIGH — slice already strong in parent 1)."""
+    if c < p + DELTA or p >= HIGH:
+        return "N/A"
+    return round(min(c - DELTA, HIGH - 1e-9), 3)
+
+
 def tiers(m):
     return {s: m["tier_corr"][s] for s in ("0", "1", "2")}
 
@@ -127,3 +137,15 @@ for n in bad:
     print("  FAIL:", n)
 print("WQ1-VERDICT:", "PASS" if np / len(checks) >= 0.80 and not any(
     r[5] == "recombine" for r in results if r[0] in ("P1", "P2")) else "FAIL")
+
+# ---- WQ1b: floorless recombine sensitivity on the amplify cells ----
+# p2 (second parent rate) is NOT stored in pkg21/24 JSONs. P1: p2 = W-branch = 0.0
+# by design (keptcorr 0.0 all rounds/seeds, run logs) -> recombine2 == recombine.
+# P2: only amplify cells can fire recombine2; report the p2 firing boundary.
+print("\nWQ1b floorless-recombine sensitivity (fires iff p,p2 < HIGH and p2 <= bound):")
+for r in results:
+    if r[0] in ("P1", "P2") and r[5] == "amplify":
+        b = recombine2_boundary(r[3], r[4])
+        print(f"  {r[0]} seed {r[1]} {r[2]}: p={r[3]:.3f} c={r[4]:.3f} -> fires iff p2 <= {b}")
+print("(P1 p2 = W-branch = 0.0 by design; P2 amplify cells have p >= HIGH so the")
+print(" floorless test cannot fire on stored data for any p2. WQ1b CLEAN.)")

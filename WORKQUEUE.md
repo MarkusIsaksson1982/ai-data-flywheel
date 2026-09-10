@@ -12,7 +12,12 @@ results change what the next item should be. Conditions below are binding, not a
   `tools/fitness_gate.py`, `wq2_fitness.md`). Router integration into
   `harvest_path_for` QUEUED (canonical routing untouched deliberately).
 - WQ6 DONE (additive `stack` param + `stack_assumed` stamp; tests 30/30).
-- NEXT: WQ3 design, then CONSULT-1 (tier roles) before WQ4 runs.
+- NEXT: WQ4 BUILD (spec FROZEN → `wq4_spec.md`, package 28). WQ1b DONE/CLEAN
+  (floorless test cannot fire on stored data: only amplify cells qualify and all
+  have p ≥ HIGH; both definitions run separately in WQ4). Matched-pool P1 side-cell
+  OPEN (does not block build). PhaseCAL PARKED until WQ4 results (4/6 round3;
+  trigger pre-registered: run reading-calibration iff results diverge unattributably;
+  if ever run: read-only, interpretation lock, A/B/C discrepancy classes).
 
 ## Round2 amendments (2026-09-10, 7 analyses; binding)
 CONSULT-0 and CONSULT-1 both returned. Nods with amendments — incorporated below.
