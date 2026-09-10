@@ -16,11 +16,20 @@ CONFOUNDED three ways — no family claim is licensed yet:
    starts at floor — format-learning ("Final: <n>") may dominate capability gain.
 3. **Device/dtype**: Qwen fp32 CPU vs new runs fp16 T4 (no Qwen GPU result on record).
 
-## Next rung (dose-match, same loop, one-digit edits)
-- (a) Re-run both cells with EPOCHS=5 (match Qwen dose): if gains hold → family/baseline
-  story; if they drop → dose story, Qwen "evaporation" was overtraining. RECOMMENDED first.
+## Dose-match (5 epochs): dose story DEAD
+- SmolLM2 5ep: pre **12/30** → post **17/30** (+5; was +4 at 3ep), loss 1.180 → 0.046.
+- TinyLlama 5ep: pre **1/30** → post **12/30** (+11; was +7 at 3ep), loss 1.482 → 0.030.
+- Near-memorization losses (0.03–0.05) yet probe GAINS — memorization did not hurt
+  generalization here. Qwen's 5-epoch drop (15→9/7, 14→13) is not dose: same dose
+  improves both other models. Remaining confounds: baseline/headroom (15/12/1) and
+  device/dtype (Qwen fp32 CPU vs fp16 T4). Next: Qwen GPU cell at 3 epochs (same loop)
+  to close   device/dtype; then seeds 1500/3000 for the new models.
+
+## Next rung (dose closed; baseline + device remain)
+- (a) DONE — dose eliminated (this section above).
 - (b) Seeds 1500/3000 at 3 epochs (pool variation; Qwen has 3 seeds). Edit SEED constant.
-- (c) Qwen GPU cell at 3 epochs (match new dose from the other side).
+- (c) Qwen GPU single-cell at 3 epochs (dose+device match from the Qwen side) — cell
+  `tools/colab_singlecell_qwen.py` emitted alongside the others.
 - Instrumentation gap: cells return aggregates only — per-tier/format-vs-arithmetic split
   needed to separate format-learning (TinyLlama floor) from reasoning gain. Queued.
 

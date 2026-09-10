@@ -144,6 +144,8 @@ print("CELL DONE", flush=True)
 '''
 
 MODELS = {
+    "qwen": ("Qwen2.5-1.5B-Instruct (Qwen side: closes dose+device vs local-CPU ref)",
+             "Qwen/Qwen2.5-1.5B-Instruct"),
     "smollm2": ("SmolLM2-1.7B-Instruct (primary: non-Qwen family, T4-fits)",
                 "HuggingFaceTB/SmolLM2-1.7B-Instruct"),
     "tinyllama": ("TinyLlama-1.1B-Chat (parallel: Llama-arch family, lightest)",
