@@ -5,19 +5,28 @@ generic tiers (Frontier/Mid/Cheap/Human/External/Verifier/Environment).
 Rule: this file is updated — items reordered, rescoped, or parked — whenever an item's
 results change what the next item should be. Conditions below are binding, not advisory.
 
-## State (2026-09-10, P1 pushed)
+## State (2026-09-10, P1 pushed; P2 COMPLETE — pushing)
 - WQ1 DONE/PASS (84/84, zero recombine; `tools/contrib_taxonomy.py`, `wq1_contrib.md`).
   Condition B not triggered. WQ2/WQ4/WQ5 unlocked.
-- WQ2 DONE/PASS on EV (+0.046/cell, 10/15 directional; s3000 washout documented;
-  `tools/fitness_gate.py`, `wq2_fitness.md`). Router integration into
-  `harvest_path_for` QUEUED (canonical routing untouched deliberately).
+- WQ1b DONE/CLEAN (floorless test cannot fire on stored data; both defs run in WQ4).
+- WQ2 DONE/PASS on EV (+0.046/cell; per-seed +0.104/+0.104/−0.070;
+  `tools/fitness_gate.py`, `wq2_fitness.md`). Router integration QUEUED.
 - WQ6 DONE (additive `stack` param + `stack_assumed` stamp; tests 30/30).
-- NEXT: WQ4 BUILD (spec FROZEN → `wq4_spec.md`, package 28). WQ1b DONE/CLEAN
-  (floorless test cannot fire on stored data: only amplify cells qualify and all
-  have p ≥ HIGH; both definitions run separately in WQ4). Matched-pool P1 side-cell
-  OPEN (does not block build). PhaseCAL PARKED until WQ4 results (4/6 round3;
-  trigger pre-registered: run reading-calibration iff results diverge unattributably;
-  if ever run: read-only, interpretation lock, A/B/C discrepancy classes).
+- WQ3 DONE/PASS 27/27 zero-compute (signed kept-gap tripwire; invert trips 9/9,
+  blind silent 18/18; margin tracks recovery; `tools/margin_tripwire.py`,
+  `wq3_margin.md`). Gaming-stress calibration still open (needs poison runs).
+- WQ4 DONE (`flywheel_pkg28.py`, `pkg28_eco.json`, `pkg28_eco.md`): gate FAILs on
+  probe-hard (solo-frontier specialist dominance, CIs overlap anyway); R0 separation
+  win (joint coverage 3/3 slices, no solo holds all; eco > consult on t2 via depth
+  purity — D rejected); depth mechanism (probe variance lives in reason_depth, not
+  tier skill); esc channel silent; R1 unrepresentable-in-substrate; Condition B
+  untriggered (no recombine hits). v1 consult≡eco identity caught+fixed as spec
+  defect before analysis.
+- WQ5-sim DONE (`flywheel_pkg29.py`, `pkg29_dose.json`, `pkg29_dose.md`): mass→skill
+  (threshold ≤2 arts), length→depth, probe ≈ skill^depth compounding. SFT motive
+  narrowed to long-chain dose (CONSULT-2 when raised).
+- P2 plateau = WQ3 + WQ4 + WQ5-sim. NEXT: P2 push → CONSULT-0; PhaseCAL stays parked
+  (trigger: unattributable divergence in WQ4-result readings).
 
 ## Round2 amendments (2026-09-10, 7 analyses; binding)
 CONSULT-0 and CONSULT-1 both returned. Nods with amendments — incorporated below.
