@@ -14,6 +14,65 @@ results change what the next item should be. Conditions below are binding, not a
 - WQ6 DONE (additive `stack` param + `stack_assumed` stamp; tests 30/30).
 - NEXT: WQ3 design, then CONSULT-1 (tier roles) before WQ4 runs.
 
+## Round2 amendments (2026-09-10, 7 analyses; binding)
+CONSULT-0 and CONSULT-1 both returned. Nods with amendments — incorporated below.
+- **Freeze**: EPS/DELTA/FLOOR/HIGH/CEIL + GATE=0.05 frozen as of P1. No retuning once
+  WQ4 data exists; WQ4 is the out-of-sample check (claude).
+- **WQ1b (before WQ4)**: second recombine test without floor requirement
+  (`c >= pb + DELTA`, both parents < HIGH); must stay clean on pkg21/24, reported
+  separately (claude). Near-boundary (±DELTA) batch calls route to "drift, contested"
+  via Wilson machinery, not bare threshold (claude). Relabel: recombine =
+  multi-source joint accessibility (channel), not "weight-level" (glm, grok).
+  Add `amplify_pool` vs `amplify_other` sub-tag (deepseek). Matched-pool P1 cell still
+  open (deepseek attribution gap — pool also differed in pkg24).
+- **WQ2b (before router integration)**: per-seed EV beside pooled mean — measured:
+  s0 +0.104, s1500 +0.104, s3000 −0.070/cell (claude, deepseek, glm). Measured-pollution
+  flag (fork-time kept-correct of suspect branch, already computed for pair_coverage)
+  as primary signal, structural veto as fallback; recompute from existing JSONs, zero
+  new runs (glm). Tainted-history decay/rehabilitation after N clean rounds specified
+  at design level; calibrate on WQ4 multi-round data (gemini). Router integration stays
+  QUEUED until WQ2b revalidates.
+- **WQ4 spec (frozen by round2 consensus, 6/7 role nod)**:
+  Tiers = capability profiles over slices, all tiers generative (deepseek dissent
+  adopted over pipeline-function framing): Cheap broad-shallow volume, Mid narrow-deep
+  correctness, Frontier deep-narrow specialty + blind spot, t2≈0.75 headroom so
+  screening stays necessary (glm, qwen). Frontier = frozen capability-parameterized SM
+  (unanimous), never trained within arms (frozen-first isolates amplification of a
+  fixed expert signal); recognition-vs-generation separately parameterized (luna-R1);
+  scarcity quotas (cheap ~1000 / mid ~100-200 / frontier ~10-30 calls, luna-R2).
+  Frontier role = seed + critique, NOT critique-only (critique-only never touches the
+  pool = theater per pkg11/12; claude, glm): scarce golden generations to pool
+  (pkg23-style) + disagreement-triggered critique (fires on Mid×Verifier disagreement,
+  sparing by construction). Mid = pool-construction AND selection instrumented
+  separately (claude, pkg11 lesson).
+  Arms: 3 solo + 3 pairwise + ecosystem (7×3 seeds); matched TOTAL generation budget
+  across arms (glm); solo arms double as classifier parents — recombine comparison is
+  ecosystem-child vs solo-children, never vs tier SMs (glm, deepseek); strongest solo
+  control = cheap + free rule screen (pkg22-C pattern). Optional graft-merge arm
+  (per-slice max params; consult ceiling as trainable artifact; glm).
+  Endpoints: probe-hard primary (rematch) + NOVEL/KNOWN co-primary (consult: NOVEL-null
+  recombine hit = amplification, not emergence) + taxonomy classes; coverage/NOVEL
+  co-primary so both WQ4-condition branches stay informative. Formal gate (luna-R2):
+  C_eco > max(C_solos, C_consult, C_harvest[, C_graft]) on held-out. R0/R1 ladder +
+  outcomes A–E pre-registered. Channel annotation for any bank data (glm). Log judge
+  margins per round regardless of WQ3 state (glm → WQ3 calibration data). Recombine
+  = channel joint-accessibility on current substrate (substrate change explicitly
+  rejected unless stage-1 shows unrepresentability per deepseek option C; first
+  recombine hit gets P0 forensics per Condition B).
+- **Quarantined from doctrine**: marketplace/token-layer specifics (pre-result spec,
+  unmeasured); any synthesis still treating evaporation as family law / merge as
+  internalization / regret as selector (tainted-history watch).
+
+## PhaseCAL — Meta-family internal calibration (PROPOSED, separate phase)
+Opportunity: relative-volume calibration across Muse Spark 1.3 (this session) / 1.2 /
+1.1-web. Engaged only if it beats queue progress. Fitting points, in order:
+  (a) WQ4 spec frozen — calibrate spec-reading across versions (cheap, no runs);
+  (b) WQ4 results landed — calibrate interpretation on novel data (the real test:
+      do versions converge or diverge where no archor exists?).
+  Order: (b) primary, (a) optional. Never interleaved with WQ4 runs (would confound
+  the out-of-sample check). Prompter forwards data externally; results return as
+  reference-content. Parked until WQ4 spec freeze — raised in TUI then.
+
 ## Tier legend
 Frontier = flagship reasoning tier · Mid = balanced tier · Cheap = high-volume sampler
 tier · Human/External/Verifier/Environment = non-model sources.
