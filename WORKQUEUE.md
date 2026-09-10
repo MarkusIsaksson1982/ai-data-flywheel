@@ -57,6 +57,11 @@ results change what the next item should be. Conditions below are binding, not a
   P3 real-weights plateau = brief + results. NEXT: P3 push → external round with the
   transfer-gap question (why doesn't hard mass create skill: pre-training gap vs
   dose-formulation?).
+- Round7b follow-ups DONE (`consult2_followup.md`): rank-sweep null (r32 ≡ r8 on
+  probe; capacity not binding ≤r32; full-FT demoted); scaffold weak (no acc effect;
+  fmt holds modestly; s3000 collapse NOT replicated → fmt volatility is the finding).
+  SFT track CLOSED pending new ideas (bank extension unbuilt; skill-creation motives
+  all expensive with no positive lead). Sim queue (WQ2b router gate, P1 sidecar) open.
 - Round7 audit (binding): (a) SCOPE RULE — sim is a validated substrate for information
   routing/pool composition, NOT for skill acquisition; any future "sim predicts
   acquisition" claim must carry CONSULT-2 as counterexample (qwen). Tier_acc has no
